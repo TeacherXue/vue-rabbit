@@ -1,4 +1,13 @@
 <script setup>
+import { getLayoutData } from '@/apis/layout'
+import { ref, onMounted } from 'vue'
+
+const navList = ref([])
+
+onMounted(async () => {
+    const { result } = await getLayoutData()
+    navList.value = result
+})
 
 </script>
 
@@ -9,17 +18,8 @@
                 <RouterLink to="/">小兔鲜</RouterLink>
             </h1>
             <ul class="app-header-nav">
-                <li class="home">
-                    <RouterLink to="/">首页</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/">居家</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/">美食</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/">服饰</RouterLink>
+                <li class="home" v-for="item in navList" :key="item.id">
+                    <RouterLink to="/">{{ item.name }}</RouterLink>
                 </li>
             </ul>
             <div class="search">
@@ -133,4 +133,5 @@
             }
         }
     }
-}</style>
+}
+</style>
