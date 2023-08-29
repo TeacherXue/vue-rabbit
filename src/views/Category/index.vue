@@ -1,30 +1,12 @@
 <script setup>
 import GoodsItem from '@/views/Home/components/GoodsItem.vue'
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import { getCategoryApi } from '@/apis/category'
-const categoryData = ref({})
-const route = useRoute()
-const getCategory = async (id) => {
-    // 如何在setup中获取路由参数 useRoute() -> route 等价于this.$route
-    const res = await getCategoryApi(id)
-    categoryData.value = res.result
-}
-getCategory(route.params.id)
+import { useBanner } from './composables/useBanner'
+import { useCategory } from './composables/useCategory'
 
-//获取 banner
-import { getBanner } from "@/apis/home";
-
-const bannerList = ref([]);
-const getBannerList = () => {
-    getBanner({ distributionSite: "2" }).then((res) => {
-        bannerList.value = res.result;
-    });
-}
-
-onMounted(() => {
-    getBannerList();
-});
+//获取分类页面数据
+const { categoryData } = useCategory()
+//轮播图
+const { bannerList } = useBanner()
 </script>
 
 
