@@ -5,9 +5,9 @@ import LayoutFooter from './components/LayoutFooter.vue'
 import LayoutSticky from './components/LayoutSticky.vue';
 import { onMounted } from 'vue'
 
-import { useCategroyStore } from '@/stores/categroy'
+import { useCategoryStore } from '@/stores/category'
 
-const categroyStore = useCategroyStore()
+const categroyStore = useCategoryStore()
 
 onMounted(() => {
     categroyStore.getNavList()

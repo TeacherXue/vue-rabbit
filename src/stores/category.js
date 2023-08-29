@@ -3,7 +3,7 @@ import { getLayoutData } from '@/apis/layout'
 import { ref } from 'vue'
 
 
-export const useCategroyStore = defineStore('category', () => {
+export const useCategoryStore = defineStore('category', () => {
     const navList = ref([])
 
     const getNavList = async () => {

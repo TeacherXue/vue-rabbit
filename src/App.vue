@@ -7,8 +7,4 @@ import { RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style scoped lang="scss">
-.test {
-  color: $xtxColor;
-}
-</style>
+<style scoped lang="scss"></style>

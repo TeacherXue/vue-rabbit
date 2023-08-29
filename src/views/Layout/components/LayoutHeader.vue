@@ -1,6 +1,6 @@
 <script setup>
-import { useCategroyStore } from '@/stores/categroy'
-const categroyStore = useCategroyStore()
+import { useCategoryStore } from '@/stores/category'
+const categroyStore = useCategoryStore()
 
 </script>
 
