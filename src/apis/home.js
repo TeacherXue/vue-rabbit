@@ -13,3 +13,12 @@ export function getBanner() {
 export const getNewGoods = () => {
     return http.get('/home/new')
 }
+
+/**
+ * @description: 获取人气推荐
+ * @param {*}
+ * @return {*}
+ */
+export const getHotGoods = () => {
+    return http.get('/home/hot')
+}
