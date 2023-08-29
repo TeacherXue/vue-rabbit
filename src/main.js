@@ -13,7 +13,7 @@ import '@/styles/common.scss'
 
 const app = createApp(App)
 
-app.use(createPinia())
-app.use(router)
+app.use(createPinia()) //注册状态管理
+app.use(router) //注册路由
 app.use(lazyPlugin) //注册自定义指令
 app.mount('#app')

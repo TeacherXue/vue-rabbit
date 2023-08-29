@@ -22,3 +22,12 @@ export const getNewGoods = () => {
 export const getHotGoods = () => {
     return http.get('/home/hot')
 }
+
+/**
+ * @description: 获取所有商品模块
+ * @param {*}
+ * @return {*}
+ */
+export const getGoodsList = () => {
+    return http.get('/home/goods')
+}
