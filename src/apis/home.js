@@ -1,8 +1,13 @@
 import http from '@/utils/http'
 
 // 获取首页banner
-export function getBanner() {
-    return http.get('/home/banner')
+export function getBanner(params = {}) {
+    const { distributionSite = "1" } = params
+    return http.get('/home/banner', {
+        params: {
+            distributionSite
+        }
+    })
 }
 
 /**
