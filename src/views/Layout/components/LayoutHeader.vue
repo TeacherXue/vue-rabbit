@@ -1,13 +1,6 @@
 <script setup>
-import { getLayoutData } from '@/apis/layout'
-import { ref, onMounted } from 'vue'
-
-const navList = ref([])
-
-onMounted(async () => {
-    const { result } = await getLayoutData()
-    navList.value = result
-})
+import { useCategroyStore } from '@/stores/categroy'
+const categroyStore = useCategroyStore()
 
 </script>
 
@@ -18,7 +11,7 @@ onMounted(async () => {
                 <RouterLink to="/">小兔鲜</RouterLink>
             </h1>
             <ul class="app-header-nav">
-                <li class="home" v-for="item in navList" :key="item.id">
+                <li class="home" v-for="item in categroyStore.navList" :key="item.id">
                     <RouterLink to="/">{{ item.name }}</RouterLink>
                 </li>
             </ul>
