@@ -2,6 +2,7 @@
 import { getGoodsDetail } from '@/apis/detail'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import HotRank from './components/HotRank.vue'
 
 const route = useRoute()
 
@@ -121,7 +122,8 @@ onMounted(() => {
                         </div>
                         <!-- 24热榜+专题推荐 -->
                         <div class="goods-aside">
-
+                            <HotRank :hotType="1" />
+                            <HotRank :hotType="2" />
                         </div>
                     </div>
                 </div>
